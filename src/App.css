@@ -1,38 +1,222 @@
-.App {
+.card {
+  margin: 1rem;
+  padding: 40px;
+  border: 1px solid #6231ec;
+  border-radius: 100px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  max-width: 600px;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
   text-align: center;
+  color: gray;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.answers {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 100px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.radioArea {
+  margin-left: 10px;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+.inputRadio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(172, 114, 172);
+  border: rgb(172, 114, 172);
+}
+
+.options {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid #6231ec;
+}
+
+.inputRadio:checked ~ span {
+  background-color: #6231ec;
+}
+
+.options:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6231ec;
+}
+
+.inputRadio:checked ~ .options:after {
+  display: block;
+}
+
+/*css animation*/
+
+.cont {
+  position: relative;
+  animation: slideUp 4s ease;
+  /* visibility: hidden; */
+}
+.q1 {
+  animation-delay: 0s;
+}
+.q2 {
+  animation-delay: 4s;
+}
+.q3 {
+  animation-delay: 8s;
+}
+
+.autoCorrect {
+  animation: autocorrect 4s ease 12s;
+}
+
+.hold{
+  animation: cardFade 4s ease 16s;
+}
+
+.title {
+  animation: quesFade 4s ease 20s;
+}
+@keyframes slideUp {
+  from {
+    top: 300px;
+    opacity: 0;
+    
+  }
+  to { 
+    visibility: visible;
+    top: 0px;
+    opacity: 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes autocorrect {
   from {
-    transform: rotate(0deg);
+    background-color: white;
   }
   to {
-    transform: rotate(360deg);
+    background-color: #6231ec;
   }
 }
+@keyframes cardFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes quesFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 
+
+.radioArea {
+  margin-left: 10px;
+}
+
+
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+.radioArea {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+.inputRadio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(172, 114, 172);
+  border: rgb(172, 114, 172);
+}
+.options{
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid #6231ec;
+}
+.radioArea:hover .inputRadio ~ span {
+  background-color: white;
+}
+.inputRadio:checked ~ span {
+  background-color: #6231ec;
+}
+.card p label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+   top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6231ec;
+}
+.inputRadio:checked ~ .card p label span:after {
+  display: block;
+}
+
+
+.card + p {
+  position: relative;
+  animation-name: firstAns;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+}
+
+@keyframes firstAns {
+  from {
+    top: 250px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+ */
